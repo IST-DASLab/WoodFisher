@@ -1,7 +1,6 @@
-# WoodFisher: Efficient Second-Order Approximation
-for Neural Network Compression
+# WoodFisher: Efficient Second-Order Approximation for Neural Network Compression
 
-![WoodFisher](https://github.com/IST-DASLab/WoodFisher/blob/master/woodfisher_camera_ready.png)
+![WoodFisher](https://github.com/IST-DASLab/WoodFisher/blob/main/woodfisher_camera_ready.png)
 
 Code coming out very soon, stay tuned! 
 
