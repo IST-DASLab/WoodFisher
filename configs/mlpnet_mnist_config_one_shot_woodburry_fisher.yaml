@@ -1,0 +1,34 @@
+# This config serves as a guided example for writing config files.
+# It usesSimpleNet + MNIST with this config
+
+pruners:
+  pruner_1:
+    class: WoodburryFisherPruner #NaiveHessianPruner #FisherPruner #MagnitudePruner #FisherPruner #WoodburryFisherPruner
+    epochs: [0,2,2]
+#    epochs: [0,10,10]
+    weight_only: True
+    initial_sparsity: 0.0
+    target_sparsity: 0.9
+    modules: [fc2]  # names of modules `pruner_1` prunes
+    keep_pruned: True
+#  pruner_2:
+#    class: MagnitudePruner
+#    epochs: [0,1,5]
+#    weight_only: True
+#    initial_sparsity: 0.05
+#    target_sparsity: 0.99
+#    modules: [fc2]  # names of modules `pruner_1` prunes
+#    keep_pruned: False
+
+trainers:
+  # use this trainer name unless you want KD or other custom thing
+  default_trainer:
+    optimizer:
+      class: SGD
+      lr: 0.001
+      momentum: 0.5
+
+    lr_scheduler:
+      class: ExponentialLR
+      gamma: 0.9
+      epochs: [120,1,140]

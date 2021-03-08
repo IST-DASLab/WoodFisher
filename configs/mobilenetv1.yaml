@@ -1,0 +1,51 @@
+pruners:
+  pruner_1:
+    class: BlockwiseWoodburryFisherPruner
+    epochs: [4,4,24]
+    weight_only: True
+    initial_sparsity: 0.05
+    target_sparsity: 0.80
+    modules: [
+      model.0.0,
+      model.1.0,
+      model.1.3,
+      model.2.0,
+      model.2.3,
+      model.3.0,
+      model.3.3,
+      model.4.0,
+      model.4.3,
+      model.5.0,
+      model.5.3,
+      model.6.0,
+      model.6.3,
+      model.7.0,
+      model.7.3,
+      model.8.0,
+      model.8.3,
+      model.9.0,
+      model.9.3,
+      model.10.0,
+      model.10.3,
+      model.11.0,
+      model.11.3,
+      model.12.0,
+      model.12.3,
+      model.13.0,
+      model.13.3,
+      fc
+    ]
+    keep_pruned: False
+
+trainers:
+  default_trainer:
+    optimizer:
+      class: SGD
+      lr: 0.005
+      momentum: 0.9
+      weight_decay: 0.0001
+
+    lr_scheduler:
+      class: ExponentialLR
+      gamma: 0.92
+      epochs: [30,1,100]

@@ -1,0 +1,23 @@
+pruners:
+  pruner_1:
+    class: WoodburryFisherPruner
+    epochs: [0,2,22]
+    weight_only: True
+    initial_sparsity: 0.0
+    target_sparsity: 0.9
+    modules: [layer2.2.conv2]
+    keep_pruned: False
+
+trainers:
+  default_trainer:
+    optimizer:
+      class: SGD
+      lr: 0.001
+      momentum: 0.9
+      weight_decay: 0.0001
+
+
+    lr_scheduler:
+      class: ExponentialLR
+      gamma: 0.1
+      epochs: [30,5,50]
