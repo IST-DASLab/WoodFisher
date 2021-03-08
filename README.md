@@ -2,6 +2,8 @@
 This repository accompanies the NeurIPS 2020 paper on WoodFisher: Efficient Second-Order Approximation for Neural Network Compression
  (Singh & Alistarh, 2020). 
  
+ <img src="https://github.com/IST-DASLab/WoodFisher/blob/main/woodfisher_camera_ready_uncompressed.png" width="500">
+
  The code is based on PyTorch and has been tested on version `1.2.0+cu92`.
 
 #### Full-WoodFisher pruners
